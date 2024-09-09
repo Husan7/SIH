@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Profit Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8f8f8;
+        }
+        .summary {
+            margin-top: 20px;
+        }
+        canvas {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">SideMenu</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="crop_recomendation.html">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Crop Recomendation</span>
+                </a>
+                <span class="tooltip">Crop Recomendation</span>
+            </li>
+            <li>
+                <a href="diseasedetection.html">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Disease Detection</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Weather</span>
+                </a>
+                <span class="tooltip">Weather</span>
+            </li>
+            
+            <li>
+                <a href="profitanalysis.html">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Profit Analytics</span>
+                </a>
+                <span class="tooltip">Files</span>
+            </li>
+            <li>
+                <a href="experttalk.html">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Expert Talk</span>
+                </a>
+                <span class="tooltip">Order</span>
+            </li>
+            <li>
+                <a href="track silos.html">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Track nearby silos</span>
+                </a>
+                <span class="tooltip">Track nearby silos</span>
+            </li>
+            <li>
+                <a href="governmentpolicies.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Government Policies</span>
+                </a>
+                <span class="tooltip">Setting</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <i class='bx bx-export'></i>
+                    <div class="name_job">
+                        <div class="name">Logout</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+
+
+
+
+    <div class="container">
+        <h1>Crop Profit Analysis</h1>
+        
+        <h2>Income and Expenses for Crops</h2>
+        <table>
+            <tr>
+                <th>Crop</th>
+                <th>Income ($)</th>
+                <th>Expenses ($)</th>
+                <th>Profit ($)</th>
+            </tr>
+            <tr>
+                <td>Wheat</td>
+                <td>6000</td>
+                <td>3000</td>
+                <td>3000</td>
+            </tr>
+            <tr>
+                <td>Rice</td>
+                <td>7000</td>
+                <td>4000</td>
+                <td>3000</td>
+            </tr>
+            <tr>
+                <td>Sugarcane</td>
+                <td>5000</td>
+                <td>2500</td>
+                <td>2500</td>
+            </tr>
+            <tr>
+                <td>Cotton</td>
+                <td>8000</td>
+                <td>5000</td>
+                <td>3000</td>
+            </tr>
+        </table>
+
+        <div class="summary">
+            <h3>Profit Analysis for Different Crops</h3>
+        </div>
+
+        <canvas id="cropProfitChart"></canvas>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('cropProfitChart').getContext('2d');
+        const cropProfitChart = new Chart(ctx, {
+            type: 'bar', // You can also use 'line', 'pie', etc.
+            data: {
+                labels: ['Wheat', 'Rice', 'Sugarcane', 'Cotton'],
+                datasets: [
+                    {
+                        label: 'Income ($)',
+                        data: [6000, 7000, 5000, 8000],
+                        backgroundColor: '#4CAF50',
+                        borderColor: '#388E3C',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Expenses ($)',
+                        data: [3000, 4000, 2500, 5000],
+                        backgroundColor: '#F44336',
+                        borderColor: '#D32F2F',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Profit ($)',
+                        data: [3000, 3000, 2500, 3000],
+                        backgroundColor: '#2196F3',
+                        borderColor: '#1976D2',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Amount ($)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</section>
+
+<script src="script1.js"></script>
+    <script src="/js/script2.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

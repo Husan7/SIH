@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        select, input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #2980b9;
+        }
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3498db;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e7f3fe;
+            border: 1px solid #b3d4fc;
+            color: #31708f;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">SideMenu</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="crop_recomendation.html">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Crop Recomendation</span>
+                </a>
+                <span class="tooltip">Crop Recomendation</span>
+            </li>
+            <li>
+                <a href="diseasedetection.html">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Disease Detection</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Weather</span>
+                </a>
+                <span class="tooltip">Weather</span>
+            </li>
+            
+            <li>
+                <a href="profitanalysis.html">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Profit Analytics</span>
+                </a>
+                <span class="tooltip">Files</span>
+            </li>
+            <li>
+                <a href="experttalk.html">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Expert Talk</span>
+                </a>
+                <span class="tooltip">Order</span>
+            </li>
+            <li>
+                <a href="track silos.html">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Track nearby silos</span>
+                </a>
+                <span class="tooltip">Track nearby silos</span>
+            </li>
+            <li>
+                <a href="governmentpolicies.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Government Policies</span>
+                </a>
+                <span class="tooltip">Setting</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <i class='bx bx-export'></i>
+                    <div class="name_job">
+                        <div class="name">Logout</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+<div class="container">
+    <h1>Crop Recommendation System</h1>
+    
+    <form id="cropForm">
+        <label for="ph">Enter pH Value of Soil:</label>
+        <input type="number" id="ph" name="ph" min="1" max="14" step="0.1" placeholder="e.g., 6.5">
+
+        <label for="fertility">Select Soil Fertility Level:</label>
+        <select id="fertility" name="fertility">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <label for="soil">Select Soil Type:</label>
+        <select id="soil" name="soil">
+            <option value="clay">Clay</option>
+            <option value="sandy">Sandy</option>
+            <option value="loamy">Loamy</option>
+            <option value="silty">Silty</option>
+        </select>
+
+        <label for="state">Select Your State:</label>
+        <select id="state" name="state">
+            <option value="maharashtra">Maharashtra</option>
+            <option value="punjab">Punjab</option>
+            <option value="uttar_pradesh">Uttar Pradesh</option>
+            <option value="tamil_nadu">Tamil Nadu</option>
+            <option value="west_bengal">West Bengal</option>
+        </select>
+
+        <label for="weather">Select Weather Condition:</label>
+        <select id="weather" name="weather">
+            <option value="rainy">Rainy</option>
+            <option value="dry">Dry</option>
+            <option value="moderate">Moderate</option>
+        </select>
+
+        <input type="submit" value="Get Crop Recommendation">
+    </form>
+
+    <div class="result" id="recommendation">
+        <!-- Recommendations will be displayed here -->
+    </div>
+</div>
+
+<script>
+    document.getElementById('cropForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page reload
+
+        // Get form values
+        const phValue = document.getElementById('ph').value;
+        const fertility = document.getElementById('fertility').value;
+        const soilType = document.getElementById('soil').value;
+        const state = document.getElementById('state').value;
+        const weather = document.getElementById('weather').value;
+
+        // Generate crop recommendations based on inputs
+        let recommendation = '';
+
+        if (phValue >= 6 && phValue <= 7 && fertility === 'high' && soilType === 'loamy' && state === 'punjab' && weather === 'moderate') {
+            recommendation = 'Recommended Crops: Wheat, Maize, Barley';
+        } else if (phValue <= 6 && fertility === 'medium' && soilType === 'clay' && state === 'west_bengal' && weather === 'rainy') {
+            recommendation = 'Recommended Crops: Rice, Jute, Sugarcane';
+        } else if (phValue >= 7 && fertility === 'low' && soilType === 'sandy' && state === 'maharashtra' && weather === 'dry') {
+            recommendation = 'Recommended Crops: Millet, Groundnut, Bajra';
+        } else if (phValue >= 5.5 && phValue <= 6.5 && fertility === 'medium' && soilType === 'silty' && state === 'uttar_pradesh' && weather === 'moderate') {
+            recommendation = 'Recommended Crops: Sugarcane, Potato, Wheat';
+        } else {
+            recommendation = 'Please provide correct inputs or modify the selection for better crop recommendations.';
+        }
+
+        // Display the recommendation
+        const resultDiv = document.getElementById('recommendation');
+        resultDiv.innerHTML = recommendation;
+        resultDiv.style.display = 'block';
+    });
+</script>
+
+</section>
+
+<script src="script1.js"></script>
+    <script src="/js/script2.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

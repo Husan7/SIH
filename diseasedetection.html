@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection</title>
+    <link rel="stylesheet" href="diseasedetection.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">SideMenu</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="crop_recomendation.html">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Crop Recomendation</span>
+                </a>
+                <span class="tooltip">Crop Recomendation</span>
+            </li>
+            <li>
+                <a href="diseasedetection.html">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Disease Detection</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Weather</span>
+                </a>
+                <span class="tooltip">Weather</span>
+            </li>
+            
+            <li>
+                <a href="profitanalysis.html">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Profit Analytics</span>
+                </a>
+                <span class="tooltip">Files</span>
+            </li>
+            <li>
+                <a href="experttalk.html">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Expert Talk</span>
+                </a>
+                <span class="tooltip">Order</span>
+            </li>
+            <li>
+                <a href="track silos.html">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Track nearby silos</span>
+                </a>
+                <span class="tooltip">Track nearby silos</span>
+            </li>
+            <li>
+                <a href="governmentpolicies.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Government Policies</span>
+                </a>
+                <span class="tooltip">Setting</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <i class='bx bx-export'></i>
+                    <div class="name_job">
+                        <div class="name">Logout</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+    <header>
+        <h1>Crop Disease Detection</h1>
+       
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>Welcome to the Disease Detection Tool</h2>
+            <p>Identify crop diseases by uploading images of affected plants.</p>
+        </section>
+
+        <section id="upload">
+            <h3>Upload Image</h3>
+            <form>
+                <input type="file" name="image" accept="image/*">
+                <button type="submit">Detect Disease</button>
+            </form>
+        </section>
+
+        <section id="results">
+            <h3>Detection Results</h3>
+            <p>No results yet. Please upload an image to start detection.</p>
+        </section>
+    </main>
+
+</section>
+
+<script src="script1.js"></script>
+    <script src="/js/script2.js"></script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #0062cc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            position: relative;
+            animation: slideInFromTop 1s ease;
+        }
+        .content {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #0062cc;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            animation: fadeIn 1.5s ease;
+        }
+        .appointment-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border: 2px solid #0062cc;
+        }
+        button {
+            background-color: #0062cc;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            margin: 30px auto 0;
+        }
+        button:hover {
+            background-color: #004a99;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #0062cc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @keyframes slideInFromTop {
+            from {
+                top: -100px;
+                opacity: 0;
+            }
+            to {
+                top: 0;
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Floating background animation */
+        .floating-background {
+            position: absolute;
+            top: -50px;
+            left: -150px;
+            height: 500px;
+            width: 500px;
+            background-color: #0099ff;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+            animation: float 8s ease-in-out infinite;
+        }
+        .floating-background-2 {
+            position: absolute;
+            top: 150px;
+            right: -100px;
+            height: 400px;
+            width: 400px;
+            background-color: #66d9ff;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.3;
+            animation: float 10s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">SideMenu</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="index.html">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="crop_recomendation.html">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Crop Recomendation</span>
+                </a>
+                <span class="tooltip">Crop Recomendation</span>
+            </li>
+            <li>
+                <a href="diseasedetection.html">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Disease Detection</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="weather.html">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Weather</span>
+                </a>
+                <span class="tooltip">Weather</span>
+            </li>
+            
+            <li>
+                <a href="profitanalysis.html">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">Profit Analytics</span>
+                </a>
+                <span class="tooltip">Files</span>
+            </li>
+            <li>
+                <a href="experttalk.html">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Expert Talk</span>
+                </a>
+                <span class="tooltip">Order</span>
+            </li>
+            <li>
+                <a href="track silos.html">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Track nearby silos</span>
+                </a>
+                <span class="tooltip">Track nearby silos</span>
+            </li>
+            <li>
+                <a href="governmentpolicies.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Government Policies</span>
+                </a>
+                <span class="tooltip">Setting</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <i class='bx bx-export'></i>
+                    <div class="name_job">
+                        <div class="name">Logout</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+
+
+
+    <header>
+        Book a Premium Appointment
+    </header>
+
+    <div class="floating-background"></div>
+    <div class="floating-background-2"></div>
+
+    <div class="content">
+        <h2>Schedule a Video Call or Send a Message</h2>
+
+        <div class="appointment-form">
+            <form id="appointment-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="contact-type">Preferred Contact Method:</label>
+                <select id="contact-type" name="contact-type" required>
+                    <option value="video-call">Video Call</option>
+                    <option value="message">Message</option>
+                </select>
+
+                <label for="date">Preferred Appointment Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Appointment Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="message">Message (Optional):</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message..."></textarea>
+
+                <button type="submit">Submit Appointment Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Premium Service. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById('appointment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Simulate form submission
+            alert('Your appointment request has been submitted! We will get in touch soon.');
+
+            // Reset form after submission
+            document.getElementById('appointment-form').reset();
+        });
+    </script>
+
+
+</section>
+
+<script src="script1.js"></script>
+    <script src="/js/script2.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
