@@ -17,4 +17,8 @@ AI/ML: TensorFlow, OpenCV, Hugging Face
 
 
 https://youtu.be/2kXHr_VgRM8?si=MOIrvaksdsC9xfP9
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2kXHr_VgRM8?si=MOIrvaksdsC9xfP9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Watch the Demo
+
+[![Kisan.AI Demo](https://img.youtube.com/vi/2kXHr_VgRM8/0.jpg)](https://www.youtube.com/watch?v=2kXHr_VgRM8)
+
