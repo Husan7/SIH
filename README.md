@@ -14,3 +14,6 @@ Tech Stack :
 Frontend: React.js, Tailwind CSS
 Backend: Python (Flask/Django), Node.js
 AI/ML: TensorFlow, OpenCV, Hugging Face
+
+
+https://youtu.be/2kXHr_VgRM8?si=MOIrvaksdsC9xfP9
